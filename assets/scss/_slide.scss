@@ -1,0 +1,70 @@
+.slidewrap {
+
+ 
+  margin-top: 40px;
+  padding: 0px 0 100px 0;
+  position: relative;
+
+
+  position: relative;
+  width: 100%;
+  z-index: 5;
+
+ 
+
+
+
+  @media print {
+
+    .swiper-wrapper{
+
+      left: 0 !important;
+      transform: none !important;
+    }
+
+    .swiper-slide{
+      width: 100% !important ;
+    }
+  
+    .copy{
+      width: 30%;
+      height: auto;
+      left: 5%;
+    }
+
+  }
+
+  @include mq(){
+
+    margin-bottom: 30px;
+
+    &.facdetail{
+      margin-bottom: 0;
+    }
+
+    &:after{
+      
+      top: 30%;
+      right: auto;
+      left:2%
+    }
+
+    padding: 0 0 60vw 0;
+
+    .copy{
+
+      width: 80vw;
+      bottom: 0vw;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .swiper-pagination{
+      display: none;
+    }
+  }
+}
+
+

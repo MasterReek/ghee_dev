@@ -1,0 +1,80 @@
+
+.mentitle{
+
+    span{
+        font-size: 16px;
+        display:flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        background-color: $coc;
+        color: white;
+        font-weight: bold;
+        padding: 5px 10px;
+    }
+
+    @include mq(sm){
+
+        margin-bottom: 15px;
+    }
+
+}
+
+.sqp{
+
+    width: 100%;
+    height: auto;
+   
+    border: 1px solid $coc;
+    line-height: 180%;
+    color: $txt;
+    padding: 30px;
+    margin-top: 50px;
+    text-align:center;
+    font-size: 16px;
+
+    strong{
+
+        color: $coc;
+        width: 100%;
+        text-align:center;
+        font-size: 24px;
+
+        margin-bottom: 15px;
+    }
+
+    a{
+
+        display:inline-flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        height: 50px;
+        padding: 0 20px;
+        background-color: $coc;
+        color: white;
+        margin-top: 50px;
+        text-decoration: none;
+        transition: .2s;
+
+        &:hover{
+
+            opacity: .7;
+        }
+    }
+
+    @include mq(sm){
+
+        padding: 15px;
+        margin-top: 25px;
+        text-align: left;
+
+        strong{
+            font-size: 20px;
+        }
+
+        a{
+            width: 100%;
+        }
+    }
+}

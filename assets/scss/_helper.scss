@@ -1,0 +1,197 @@
+html,
+body {
+  @media print {
+    // max-width: 210mm;
+    top: 0 !important;
+    left: 0 !important;
+    width: 200mm !important;
+    overflow-x: hidden;
+    size: A4;
+    margin: 0;
+    padding: 0;
+
+    width: 100% !important;
+  }
+}
+
+#pagetop {
+  width: 60px;
+  height: 60px;
+  display: block;
+  background: $coc;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 34000;
+  // border-radius: 50px;
+
+  opacity: 0;
+  transition: 0.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  pointer-events: none;
+  cursor: pointer;
+
+  i {
+    color: white;
+  }
+
+  img {
+    width: 80%;
+    height: auto;
+    transition: 0.2s;
+  }
+
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+    cursor: pointer;
+  }
+
+  &:hover {
+    
+    // transform: scale3d(1.05,1.05,1);
+    transform: scale3d(0.95,0.95,1);
+
+    img {
+      transform: translateY(-3px);
+    }
+  }
+
+  @include mq() {
+    display: none;
+  }
+
+  @media print {
+    display: none;
+  }
+}
+
+.pcnon {
+  display: none;
+
+  @include mq() {
+    display: inline;
+  }
+}
+
+.spnon {
+  display: inline;
+
+  @include mq() {
+    display: none;
+  }
+}
+
+.contains {
+  width: 100%;
+  height: auto;
+  padding: 80px 30px;
+
+  .inner{
+
+    max-width: 1000px;
+    margin: 0 auto;
+
+    small{
+
+      display: block;
+      font-size: 12px;
+      color: $sub;
+      text-align: right;margin-top: 5px;
+    }
+  }
+
+  @include mq(){
+
+    padding: 40px 20px;
+    
+  }
+  @include mq(sm){
+
+    padding: 20px 15px;
+
+  }
+
+
+}
+
+
+@mixin inv() {
+
+  transition: all 800ms cubic-bezier(0.74, 0.015, 0.15, 1); /* custom */
+
+  transition-timing-function: cubic-bezier(0.74, 0.015, 0.15, 1); /* custom */
+  transform: translateY(20px);
+  opacity: 0;
+
+  will-change: opacity, transform;
+
+  &.active {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  @media print {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@mixin inv2() {
+  will-change: opacity, transform;
+  transition: all 1500ms cubic-bezier(0.74, 0.015, 0.15, 1); /* custom */
+
+  transition-timing-function: cubic-bezier(0.74, 0.015, 0.15, 1); /* custom */
+  transform: translateX(-10px);
+  opacity: 0;
+
+  &.active {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+
+  @media print {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@mixin inv3() {
+  /* BtnEffects */
+
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.2, 2, 0.6, 0.6);
+  animation-fill-mode: both;
+  // animation-delay: .5s;
+  opacity: 0;
+
+  /*boyon*/
+
+  @keyframes boyon {
+    0% {
+      transform: scale(0.4);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  /* BtnEffects */
+  &.active {
+    animation-name: boyon;
+  }
+
+  @media print {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@mixin wd($ms){
+
+
+
+}

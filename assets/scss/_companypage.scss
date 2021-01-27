@@ -1,0 +1,257 @@
+
+
+.company_read{
+
+  width: 100%;
+  height: auto;
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  dt{
+    width: 65%;
+
+    p {
+      font-size: 16px;
+      color: $txt;
+
+      strong {
+          font-size: 24px;
+          color: $coc;
+          position: relative;
+          display: inline-block;
+          margin-bottom: 20px;
+
+          &.title{
+
+            text-align: left;
+          }
+
+          &:after {
+              content: "";
+              display: block;
+              height: 2px;
+              width: 100%;
+              background-color: $sub;
+              transform: scaleX(0);
+              transition: 1s;
+              transform-origin: left;
+              transition-delay: 1s;
+          }
+          &.move:after {
+              transform: scaleX(1);
+          }
+      }
+
+      .right{
+
+        font-size: 18px;
+        font-weight: bold;
+        text-align: right;
+        display: block;
+        @include min();
+
+        margin-top: 20px;
+      }
+      .price{
+
+          color: $coc;
+          text-decoration: underline;
+          
+      }
+  }
+  }
+
+  dd{
+
+    width: 30%;
+
+    img{
+      width: 100%;
+    }
+  }
+
+  @include mq(sm){
+
+    dt,dd{
+      width: 100%;
+    }
+
+    dt{
+      margin-bottom: 20px;
+    }
+  }
+  
+}
+
+.infocont{
+
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  margin: 0 auto;
+  // border-left: 1px dashed $sub2;
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .contitle{
+
+    margin-bottom: 50px;
+
+    @include mq(sm){
+
+      margin-bottom: 20px;
+    }
+  }
+
+  dl{
+
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: stretch;
+    align-content: flex-start;
+    border-top: 1px solid $coc;
+    width: 100%;
+
+    @media print {
+      display: block;
+
+      dt{
+        float: left;
+
+      }
+
+      dd{
+        font-size: 12px;
+      }
+    }
+    
+    dt{
+      width: 30%;
+      letter-spacing: 2px;
+      padding: 0px;
+      display:flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    dd{
+
+      width: 70%;
+      border-left: 1px solid $coc;
+      padding: 10px 15px 10px 15px;
+      line-height: 180%;
+
+      p{
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+      }
+
+      a{
+        color: $coc;
+      }
+    }
+
+
+    dt,dd{
+      display:flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      align-items: center;
+      
+      min-height: 70px;
+      
+      color: $txt;
+      border-bottom: 1px solid $coc;
+
+    }
+
+    dt{
+
+      justify-content: center;
+    }
+
+    @include mq(sm){
+     
+      dt,dd{
+
+        font-size: 14px;
+      }
+      dt{
+        width: 33%;
+      }
+
+      dd{
+        width: 67%;
+      }
+    }
+
+  }
+
+  @include mq(sm){
+
+    dl{
+
+      display: block;
+      border: 0px;
+
+      dt,dd{
+        width: 100%;
+        border: 0px;
+      }
+
+      dt{
+        font-weight: bold;
+        border-left: 10px solid $coc;
+        align-items: center;
+        display:flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+
+        padding: 0;
+        padding-left: 10px;
+        height: 30px;
+        min-height: 30px;
+      }
+
+      dd{
+        border-left: 0px;
+        border-bottom: 1px dashed $coc;
+        margin-bottom: 30px;
+        font-size: 12px;
+      }
+    }
+  }
+
+  &:nth-of-type(2),&:nth-of-type(3){
+
+    border-top: 1px dashed $sub;
+  }
+
+  .gmlink{
+
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: $coc;
+    color: white;
+    padding: 5px 30px 5px 15px;
+    text-decoration: none;
+    background-image: url(../images/SVG/arrow_r.svg);
+    background-repeat: no-repeat;
+    background-size:auto 50%;
+    background-position:right center;
+    transition: .2s;
+    font-size: 12px;
+
+    &:hover{
+      background-color: $sub;
+    }
+
+  }
+}
+

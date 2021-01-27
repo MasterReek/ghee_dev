@@ -1,0 +1,752 @@
+.contents {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 80px 15px;
+    background-color: $bgc;
+
+    &.bgcont {
+        background-image: url(../images/1x/company_bg.png);
+      
+    }
+
+    .flexb{
+
+        width: 100%;
+        display:flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: flex-start;
+
+        
+    }
+ 
+    .inner {
+        max-width: 1100px;
+        width: 100%;
+    }
+
+    .contentread {
+        text-align: center;
+        font-size: 16px;
+        @include min();
+        @include inv();
+        transition: 2s;
+        color: $txt;
+        line-height: 180%;
+
+        strong {
+            font-size: 24px;
+            font-weight: normal;
+            display: inline-block;
+            margin-bottom: 0px;
+            color: $coc;
+            position: relative;
+ 
+            line-height: 180%;
+        }
+    }
+
+    &:nth-of-type(odd) {
+        background-color: #fff;
+        // background-image: url(../images/1x/about_bg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+
+    &:nth-of-type(odd) .impic:not(.norder) {
+        dt {
+            order: 1;
+        }
+        dd {
+            order: 2;
+        }
+    }
+
+    &:nth-of-type(even) .impic:not(.norder) {
+        dt {
+            order: 2;
+        }
+        dd {
+            order: 1;
+        }
+    }
+
+    .impic {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        // margin-bottom: 80px;
+        @include min();
+
+        &.half{
+
+            margin-top: 50px;
+            width: 48%;
+
+            dt,dd{
+                width: 100%;
+            }
+
+            dt{
+                order: 1;
+            }
+            dd{
+                order: 2;
+            }
+
+            p{
+                margin-bottom: 15px;
+
+            }
+
+            ul{
+
+                padding: 15px;
+                background-color: $sub;
+            }
+
+            @include mq(sm){
+
+                width: 100%;
+                margin-top: 25px;
+                margin-bottom: 0;
+
+                ul{
+                    font-size: 12px;
+                }
+            }
+        }
+
+        &.smallimg {
+
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.733);
+            margin-bottom: 30px;
+            dt {
+                width: 30%;
+                order: 1;
+            }
+            dd {
+                width: 68%;
+                order: 2;
+            }
+
+
+        }
+
+        dt,
+        dd {
+            width: 48%;
+            @include inv2();
+
+            img {
+                width: 100%;
+            }
+        }
+
+        dd {
+            p {
+                font-size: 16px;
+                color: $txt;
+
+                strong {
+                    font-size: 24px;
+                    color: $coc;
+                    position: relative;
+                    display: inline-block;
+                    margin-bottom: 20px;
+
+                    &:after {
+                        content: "";
+                        display: block;
+                        height: 2px;
+                        width: 100%;
+                        background-color: $sub;
+                        transform: scaleX(0);
+                        transition: 1s;
+                        transform-origin: left;
+                        transition-delay: 1s;
+                    }
+                    &.move:after {
+                        transform: scaleX(1);
+                    }
+                }
+
+                .price{
+
+                    color: $coc;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        &.norder{
+
+            dt{
+                width: 40%;
+            }
+            dd{
+
+                width: 57%;
+
+                p{
+
+                    margin-bottom: 20px;
+                    line-height: 180%;
+                }
+            }
+        }
+    }
+
+    .readtxt {
+        font-size: 30px;
+        font-weight: bold;
+        @include min();
+        margin-bottom: 80px;
+    }
+
+    .read {
+        @include min();
+        text-align: center;
+        display: block;
+        font-size: 16px;
+        color: $txt;
+        margin-bottom: 50px;
+        line-height: 180%;
+    }
+
+    &.bgnon{
+        background-image: none !important;
+    }
+
+    @include mq() {
+        padding: 60px 15px;
+    }
+
+    @include mq(sm) {
+        padding: 30px 15px;
+
+        .contentread {
+            text-align: left;
+
+            strong {
+                font-size: 20px;
+            }
+        }
+
+        .impic {
+            dt,
+            dd {
+                width: 100%;
+            }
+
+            &.smallimg {
+                dt {
+                    width: 100%;
+                    order: 1;
+                }
+                dd {
+                    width: 100%;
+                    order: 2;
+                }
+            }
+        }
+
+        &:nth-of-type(odd) .impic,
+        &:nth-of-type(even) .impic {
+            dt {
+                order: 1;
+                margin-bottom: 15px;
+            }
+            dd {
+                order: 2;
+            }
+        }
+
+        .readtxt{
+
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .read{
+            text-align: left;
+        }
+    }
+}
+
+ul.threes{
+
+    width: 100%;
+    height: auto;
+    display:flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 20px;
+
+    li{
+
+        width: 30%;
+        height: auto;
+
+        &:nth-of-type(2n){
+            margin: 0 5%;
+        }
+
+        img{
+            width: 100%;
+        }
+
+        p{
+
+            strong{
+                color: $coc;
+
+            }
+        }
+    }
+
+    @include mq(sm){
+
+        li{
+            width: 100%;
+
+            &:nth-of-type(2n){
+                margin: 0 0 25px;
+            }
+
+            margin-bottom: 25px;
+    
+        }
+    }
+
+}
+
+ul.twos{
+
+    width: 100%;
+    height: auto;
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 50px;
+
+    li{
+
+        width: 48%;
+        height: auto;
+        margin-bottom: 4%;
+
+        ul{
+
+            width: 100%;
+            height: auto;
+            display:flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+
+            li{
+                width: auto;
+                margin: 0 5px 5px 0;
+                display:flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                align-items: center;
+                background-color: $coc;
+                color: white;
+                font-size: 12px;
+                padding: 0 10px; 
+            }
+        }
+
+        img{
+            width: 100%;
+        }
+
+        p{
+
+            strong{
+                color: $coc;
+
+            }
+        }
+    }
+
+
+    @include mq(){
+
+        padding: 20px;
+
+        li{
+
+            width: 100%;
+            margin-bottom: 50px;
+        }
+    }
+
+    @include mq(sm){
+
+        li{
+            width: 100%;
+
+            &:nth-of-type(2n) >{
+                margin: 0 0 25px;
+            }
+
+            margin-bottom: 25px;
+    
+        }
+    }
+
+    @media print {
+       display: block;
+
+     li{
+         width: 100%;
+     }
+       
+      
+    }
+
+}
+
+$eyehh: 250px;
+
+.eye {
+    width: 100%;
+    height: $eyehh;
+    margin-top: $hh;
+
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position: center ;
+    // background-color:$bgc ;
+    background-image: url(../images/eyebg.jpg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    background-color: black;
+
+    // &.aboutpage {
+    //     &:after {
+    //         background-image: url(../images/eye_1.jpg);
+    //         display: none;
+    //     }
+    // }
+
+    &.items {
+        &:after {
+            background-image: url(../images/1x/servicebg.jpg);
+        }
+    }
+
+    &.events{
+        &:after {
+            background-image: url(../images/mv1.jpg);
+            display: block;
+        }
+    }
+
+    &.ceremony{
+        &:after {
+            background-image: url(../images/1x/ceremony_bg.jpg);
+            display: block;
+            opacity: 1;
+            filter: brightness(.5);
+        }
+    }
+
+    &:after {
+        content: "";
+        width: 100%;
+        height: 250px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: block;
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: .8;
+        background-color: black;
+        display: none;
+    }
+
+    @media print {
+        position: relative;
+    }
+    left: 0;
+
+    br {
+        display: none;
+    }
+
+    h2 {
+        font-size: 30px;
+        color: $coc;
+        text-shadow: 0 0 4px gray;
+        letter-spacing: 2px;
+        text-align: center;
+        display: block;
+        // font-family: "M PLUS Rounded 1c";
+        font-weight: normal;
+        position: relative;
+        z-index: 2;
+        text-shadow: #fff 2px 0 2px, #fff -2px 0 2px, #fff 0 -2px 2px, #fff -2px 0 2px, #fff 2px 2px 2px,
+            #fff -2px 2px 2px, #fff 2px -2px 2px, #fff -2px -2px 2px, #fff 1px 2px 2px, #fff -1px 2px 2px,
+            #fff 1px -2px 2px, #fff -1px -2px 2px, #fff 2px 1px 2px, #fff -2px 1px 2px, #fff 2px -1px 2px,
+            #fff -2px -1px 2px, #fff 1px 1px 2px, #fff -1px 1px 2px, #fff 1px -1px 2px, #fff -1px -1px 2px;
+
+        &:after {
+            content: attr(data-caps);
+            display: block;
+            width: 80%;
+            font-size: 14px;
+            color: white;
+
+            margin-top: 15px;
+            border-top: 1px solid #fff;
+            padding-top: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: none;
+        }
+    }
+
+    @include mq() {
+        height: 200px;
+        position: relative;
+        margin-top: $tabhh;
+
+        br {
+            display: inline;
+        }
+
+        h2 {
+            font-size: 26px;
+        }
+
+        h3 {
+            font-size: 2vw;
+        }
+
+        & + div,
+        & + form {
+            margin-top: 0px;
+        }
+    }
+
+    @include mq(sm) {
+        height: 30vh;
+        margin-top: $sphh;
+
+        &:after {
+            height: 100%;
+            background-position: center;
+        }
+
+        h2 {
+            font-size: 6vw;
+            margin-top: 10px;
+        }
+    }
+
+    @media print {
+        
+        h2{
+            font-size: 18px;
+        }
+    }
+}
+
+.eye + div {
+    margin-top: $eyehh + $hh;
+    position: relative;
+    z-index: 999;
+    @media print {
+        margin-top: 0;
+      }
+}
+
+.eye ~ div:not(.loader) {
+    position: relative;
+    z-index: 999;
+}
+
+.kiyakucont {
+    width: 100%;
+    height: auto;
+    padding: 80px 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: rgb(246, 246, 246);
+
+    .inner {
+        max-width: 1000px;
+        height: auto;
+        padding: 50px;
+        border-radius: 30px;
+        background-color: white;
+        box-shadow: 0 0 5px gray;
+        display: block;
+
+        @media print {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+
+    h3 {
+        font-size: 24px;
+        color: $sub2;
+    }
+
+    p {
+        strong {
+            font-size: 20px;
+            color: $coc;
+            display: block;
+            padding: 10px 0;
+            font-weight: normal;
+        }
+    }
+
+    dl {
+        margin: 30px 0;
+
+        dt {
+            font-size: 18px;
+            font-weight: bold;
+            color: $sub;
+            display: inline-block;
+            margin-bottom: 10px;
+            background: linear-gradient(transparent 60%, #ffffe0 60%);
+        }
+
+        dd {
+            font-size: 16px;
+            line-height: 180%;
+            color: rgb(88, 88, 88);
+        }
+    }
+
+    small {
+        display: block;
+        text-align: right;
+    }
+
+    @include mq(sm) {
+        padding: 40px 15px;
+
+        .inner {
+            padding: 30px 20px;
+
+            dl {
+                dd {
+                    padding: 10px;
+                    background-color: rgb(246, 246, 246);
+                    font-size: 14px;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+
+    @media print {
+        .inner {
+            background-color: transparent;
+            box-shadow: none;
+        }
+    }
+}
+
+.companywrap {
+    width: 100%;
+    padding: 80px 30px;
+    background-color: #fff2e9;
+
+    @include mq(sm) {
+        padding: 40px 15px;
+    }
+}
+
+
+.contitle{
+
+    font-size:34px;
+    color: $coc;
+    @include noto();
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    line-height: 160%;
+    
+
+  
+    &.active:before{
+      transform: scaleX(1);
+    }
+
+    &.centered{
+
+        text-align:center;
+    }
+
+    &:before{
+        content: '';
+        border-bottom: 3px solid $coc;
+        width: 100%;
+        position:absolute;
+        left: 0;
+        bottom: 54px;
+        display: block;
+        transition: all 1s cubic-bezier(0.095, 0.150, 0.560, -0.035); 
+        transition-timing-function: cubic-bezier(.07,.3,.03,.98);
+        transform-origin: left;
+        transform: scaleX(0);
+
+        
+    }
+
+    &:after{
+        content: attr(data-caps);
+        font-size: 12px;
+        display: block;
+        width: 100%;
+        color: $txt;
+        font-weight: normal;
+        display: block;
+       
+
+    }
+  
+    img{
+        height: auto;
+        width: 200px;
+        max-height: 70vh;
+    }
+
+
+    @include mq(sm){
+
+        font-size: 26px;
+    }
+
+}

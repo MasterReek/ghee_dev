@@ -1,0 +1,175 @@
+.aboutcont{
+
+    width: 100%;
+    height: auto;
+    padding: 80px 20px;
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+
+    background-image: url(../images/1x/about_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:  center;
+    position: relative;
+    z-index: 1;
+    
+
+    .inner{
+
+        max-width: 1100px;
+        width: 100%;
+        height: auto;
+        display:flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    @include mq(){
+
+        .inner{
+            justify-content: center;
+        }
+    }
+
+
+    @include mq(sm){
+
+        padding: 20px 20px 40px;
+
+        .inner{
+
+            max-width: 100%;
+
+            h2{
+
+                min-height: 0;
+                width: auto;
+               
+    
+                img{
+    
+                    width: 15vw;
+                    height: auto;
+    
+                }
+            }
+
+            p{
+
+                writing-mode: horizontal-tb;
+                min-height: 0;
+
+                img{
+
+                    width: 60vw;
+                }
+
+                a{
+
+
+                    width: 70vw;
+                    height: 50px;
+                    display:flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    margin-top: 20px;
+                    background-color: $coc;
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 50px;
+                    
+                    &:before{
+                        content: 'たたみ工房さいとうについて';
+                    }
+                    img{
+                        display: none;
+                    }
+                }
+
+                strong{
+
+                    br{
+                        display: none;
+                    }
+                }
+            }
+
+          
+        }
+
+       
+    }
+}
+
+
+
+.contentouter{
+
+    @include noto();
+
+    .txtbox{
+
+        width: 35%;
+        height: auto;
+
+        p{
+
+            @include inv2();
+            font-size: 16px;
+            color: $txt;
+            line-height: 160%;
+
+            strong{
+              
+                color: $coc;
+                display: block;
+                margin-bottom: 15px;
+            }
+        }
+
+    }
+
+    .imgbox{
+        width: 63%;
+        height: auto;
+        @include inv();
+
+        img{
+            width: 100%;
+        }
+    }
+
+    @include mq(){
+
+  
+        .imgbox{
+            order: 2;
+
+            width: 100%;
+            
+
+            img{
+                width: 100%;
+                transform: translateX(10%);
+            }
+        }
+        .txtbox{
+
+            width: 90%;
+            order: 1;
+            margin-bottom: 50px;
+        }
+    }
+
+    @include mq(sm){
+
+        .txtbox{
+            width: 100%;
+        }
+
+    }
+
+}

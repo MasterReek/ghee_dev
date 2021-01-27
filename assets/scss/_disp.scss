@@ -1,0 +1,178 @@
+.displays {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 50px;
+
+    li {
+        width: 48%;
+        height: 60px;
+        margin-bottom: 2%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        border: 1px solid $coc;
+        position: relative;
+
+        font-size: 18px;
+        font-weight: bold;
+        color: $sub;
+
+        @include inv();
+
+        @for $i from 1 through 4 {
+            &:nth-of-type(#{$i}) {
+              transition-delay: calc(0.2s*#{$i});
+            }
+          }
+
+        &:before {
+            content: "";
+            width: 30px;
+            height: 30px;
+            display: block;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-image: url(../images/SVG/check.svg);
+            margin-right: 10px;
+        }
+    }
+
+    @include mq() {
+        li {
+            width: 100%;
+        }
+    }
+
+    @include mq(sm) {
+        li {
+            font-size: 14px;
+        }
+    }
+}
+
+.items {
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    background-color: white;
+
+    margin-bottom: 30px;
+    @include inv();
+    .itemtitle {
+        font-size: 26px;
+        color: $coc;
+        font-weight: bold;
+        display: block;
+        position: relative;
+        padding-bottom: 30px;
+        margin-bottom: 0;
+        line-height: 160%;
+        padding-bottom: 50px;
+
+        @include mq(sm) {
+            font-size: 20px;
+        }
+    }
+    .servicetitle {
+        display: inline-flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        font-size: 18px;
+        background-color: $coc;
+        padding: 5px 20px;
+        color: white;
+        border-radius: 10px;
+        margin: 0px 10px 20px 0;
+    }
+
+    .pwrap {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        p {
+            &:nth-of-type(1) {
+                width: 60%;
+            }
+            &:nth-of-type(2) {
+                width: 35%;
+            }
+        }
+
+        @include mq(sm) {
+            p {
+                &:nth-of-type(1) {
+                    width: 100%;
+                }
+                &:nth-of-type(2) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .mainread {
+        font-size: 16px;
+        color: $txt;
+
+        margin-bottom: 20px;
+
+        strong {
+            font-size: 20px;
+            display: block;
+            margin-bottom: 10px;
+        }
+    }
+
+    .whatsfor {
+        font-size: 14px;
+        padding: 20px;
+        background-color: $bgc;
+        display: inline-block;
+        margin-bottom: 20px;
+
+        strong {
+            font-size: 18px;
+            display: block;
+            color: $coc;
+        }
+    }
+
+    .imgwrap {
+        width: 100%;
+        height: auto;
+
+
+        img {
+            width: 100%;
+            display: block;
+
+  
+        }
+
+        @include mq(sm) {
+            overflow-x: scroll;
+            &:after{
+                content: '※表はスクロールできます';
+                font-size: 16px;
+                color: $coc;
+                display: block;
+                height: 20px;
+            }
+            img{
+                min-width: 800px;
+                position: relative;
+
+          
+            }
+            
+        }
+    }
+}

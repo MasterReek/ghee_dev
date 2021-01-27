@@ -1,0 +1,437 @@
+
+header{
+
+  width: 100%;
+  @include minw();
+  @include maru();
+  height: $hh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  padding:0px;
+  background: rgba(255, 255, 255, 0.938);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .2s;
+
+  @include noto();
+
+  .inner{
+    width: 100%;
+    // max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // flex-wrap: wrap;
+  }
+
+  &.scroll{
+
+    // background: rgba(255, 255, 255, 0.8);
+
+    ul{
+
+      li{
+        color: $sub;
+      }
+    }
+  }
+
+  h1{
+
+    width: auto;
+    display: block;
+    margin-left: 20px;
+  
+
+    img{
+
+      width: auto;
+      height: 100%;
+      height: 50px;
+    }
+  }
+
+  ul{
+
+    display: flex;
+    padding-right: 0px;
+    width: auto;
+    justify-content: flex-end;
+    height: 100%;
+    
+
+    li{
+
+      
+      color: rgb(238, 238, 238);
+     
+
+    
+      display:flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+
+      // &:nth-last-of-type(1){
+      //   border-right: 0px;
+      //   padding-right: 0;
+      //   margin-right: 0;
+      // }
+
+
+      font-weight: bold;
+      font-size: 16px;
+      text-align: center;
+
+      &.soon{
+
+        pointer-events: none;
+        a{
+          opacity: .2;
+        }
+      }
+      
+      a{
+        font-size: 16px;
+        color: $coc;
+        cursor: pointer;
+        transition: .2s;
+        line-height: 140%;
+        text-decoration: none;
+        padding: 0 15px;
+
+        height: $hh;
+        display:flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        
+
+        &:hover,&.current{
+
+          &:not(.soon){
+            background-color: $coc;
+            color: white;
+          }
+
+       
+        }
+      }
+
+      span{
+        font-size: 10px;
+        margin-top:5px;
+        display: block;
+        width: 100%;
+      }
+    }
+
+  }
+
+  .rbox{
+    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  
+    flex-wrap: wrap;
+
+    >img{
+      height: 30px;
+      width: auto;
+      margin-bottom: 15px;
+      
+    }
+  }
+
+  .telbox{
+
+    width: auto;
+    height: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    
+    .imgbox{
+
+      display:flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: $hh;
+      height: $hh;
+      background-color: $coc;
+
+      img{
+
+        width: 50%;
+        height: auto;
+      }
+
+     
+    }
+
+    a{
+      display:flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      align-items: center;
+      height: $hh;
+      padding: 15px;
+      text-decoration: none;
+      text-align:left;
+      color: gray;
+      width: 270px;
+
+      strong{
+        display: block;
+        color: $coc;
+        width: 100%;
+        font-size: 24px;
+        letter-spacing: 3px;
+      }
+      span{
+        display: block;
+        text-align: left;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .mailbox{
+
+    a{
+
+      display:flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: $hh;
+      height: $hh;
+      background-color: $coc;
+      align-items: center;
+
+      img{
+
+        width: 50%;
+        height: 30px;
+      }
+
+      &:hover{
+
+        background-color: $sub;
+      }
+     
+    }
+  }
+
+
+
+
+  @media print {
+    position: absolute;
+  }
+
+  @include mq() {
+
+    height: $sphh;
+
+    z-index: 10050;
+    top:0;
+
+
+    h1 {
+      position: relative;
+      z-index: 40002;
+      width: auto;
+      text-align:left;
+
+      img {
+        height: 45px;
+      }
+
+    }
+
+    .rbox {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      left: 0;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+      align-content: center;
+      background-color: white;
+
+      z-index: 30010;
+
+      pointer-events: none;
+      opacity: 0;
+      transform: translateX(20vw);
+      transition: 0.4s;
+      will-change: transform, opacity;
+
+      &.active {
+        opacity: 0.9;
+        transform: translateX(0vw);
+        pointer-events: all;
+      }
+    }
+
+    .mailbox {
+
+      width: 70%;
+      a {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+        width: 100%;
+        height: $header_h;
+        background-color: $coc;
+        border-radius: 0%;
+      
+
+        img {
+          width: auto;
+          height: 40px;
+        }
+
+        &:hover {
+          background-color: $acc;
+        }
+      }
+    }
+
+    ul {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 5vh;
+      text-align: center;
+
+      li {
+
+        width: 70%;
+        text-align: center;
+        margin-bottom: 20px;
+        margin: 0 auto;
+
+        &:nth-last-of-type(1) {
+          margin-right: auto;
+        }
+
+        &.pcnon {
+          display: block;
+        }
+
+        a {
+          font-size: 24px;
+          padding: 15px;
+          color: $coc;
+          border: 1px solid $coc;
+          width: 100%;
+
+          br {
+            display: none;
+          }
+
+          &.current{
+
+            color: white;
+          }
+
+          @include mq() {
+            font-size: 20px;
+          }
+
+          @include mq(sm) {
+            font-size: 6vw;
+          }
+        }
+
+        span {
+          font-size: 2vw;
+        }
+
+        @include mq(horizon) {
+          margin-bottom: 5px;
+
+          a {
+            font-size: 10px;
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  @include mq(sm) {
+
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .inner{
+
+      height: 100%;
+      align-items: center;
+    }
+
+    h1{
+
+      display:flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      img{
+
+        width: auto;
+        height: 40px;
+      }
+    }
+
+    ul {
+
+      
+     
+      li {
+        width: 90%;
+        height: 5vh;
+
+        a {
+          width: 100%;
+          font-size: 14px !important;
+          padding: 0;
+          height: 5vh;
+        }
+      }
+    }
+  }
+
+  @media print{
+
+
+    ul{
+
+      margin-top: 0px;
+      li{
+
+        a{
+          font-size: 10px;
+        }
+      }
+    }
+
+    .mailbox{
+      display: none;
+    }
+  }
+
+
+}
+
