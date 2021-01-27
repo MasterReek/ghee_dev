@@ -14,7 +14,15 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: .2s;
+  transition: 1s;
+  transition-delay: 1s;
+  transform: translateY(-150%);
+
+  &.active{
+
+    transform: translateY(0);
+    
+  }
 
   @include noto();
 
@@ -113,7 +121,7 @@ header{
         &:hover,&.current{
 
           &:not(.soon){
-            background-color: $coc;
+            background-color: $acc;
             color: white;
           }
 
@@ -227,8 +235,6 @@ header{
      
     }
   }
-
-
 
 
   @media print {

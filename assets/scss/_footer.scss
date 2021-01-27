@@ -4,40 +4,19 @@ footer {
   padding: 60px 0px 0px;
   position: relative;
   background-image: url(../images/1x/footer_bg.jpg);
-  
   background-repeat: no-repeat;
   background-size: cover;
-
-  &:before{
-
-    content: '';
-    width: 100%;
-    height: 100%;
-    display: block;
-    position:absolute;
-    left: 0;
-    top: 0;
-    z-index: 3;
-    background-color: rgba(255, 255, 255, 0.432);
-  }
-  
   z-index: 999;
   @include noto();
 
-
-  a{
-    transition: .2s;
-
-    &:hover{
-      // transform: scale(1.1,1.1);
-
-      opacity: .8;
+  a {
+    transition: 0.2s;
+    &:hover {
+      opacity: 0.8;
     }
   }
 
-
   .inner {
-
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
@@ -56,90 +35,84 @@ footer {
     @media print {
       justify-content: center;
     }
-
   }
 
-
-
-  ul {
-    width: 60%;
-    height: auto;
+  .logo {
+    width: 100%;
     display: flex;
-    justify-content: flex-end;
-   flex-wrap: wrap;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 15px;
 
-
-    li {
-
+    img {
+      height: 40px;
       width: auto;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      max-width: 33%;
-      margin-bottom: 15px;
-
-
-
-      a{
-
-        text-decoration: none;
-        font-size: 12px;
-        color: $txt;
-        text-align:left;
-        width: 100%;
-        word-break: keep-all;
-
-        &:after{
-          content:'｜'
-        }
-  
-
-      }
-
-
     }
   }
 
-  @include mq(){
-
-    ul{
-
-      display: none;
-    }
+  .add {
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+    color: $txtl;
+    line-height: 180%;
+    text-align: center;
   }
 
   .logoblocks {
-
     width: 40%;
-    display:flex;
+    display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
 
-
-    img{
+    img {
       width: auto;
       height: 60px;
       margin-right: 15px;
-      
     }
 
     .footlogo {
-
       width: auto;
       cursor: pointer;
-
     }
 
     p {
       line-height: 160%;
       font-size: 14px;
       color: $txt;
-     
     }
   }
 
+  .sns{
 
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    margin-top: 20px;
+
+    li{
+
+      margin: 0 5px;
+
+      a{
+
+        width: 40px;
+        height: auto;
+        margin: 0;
+  
+        img{
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
 
   small {
     width: 100%;
@@ -149,7 +122,7 @@ footer {
     align-items: center;
     flex-wrap: wrap;
     font-size: 12px;
-    color: white;
+    color: $acc;
     text-align: center;
     position: relative;
     z-index: 5;
@@ -159,9 +132,7 @@ footer {
     padding: 30px 0 0px;
     // background-size: auto 60px;
 
-    &:before{
-
-
+    &:before {
       background-color: rgba(255, 255, 255, 0.692);
     }
 
@@ -170,7 +141,7 @@ footer {
       flex-wrap: wrap;
       margin-bottom: 0;
 
-      a{
+      a {
         text-decoration: none;
       }
       dl {
@@ -184,35 +155,26 @@ footer {
             padding: 20px 0;
           }
         }
-
-        
       }
 
-      ul{
-
-   
-        li{
-
-          &:nth-of-type(1) span,a{
+      ul {
+        li {
+          &:nth-of-type(1) span,
+          a {
             height: 8vw;
           }
 
-          span{
-
-            img{
-
+          span {
+            img {
               height: 3vw;
             }
           }
         }
 
-        li:nth-of-type(3){
-
-          span{
-
+        li:nth-of-type(3) {
+          span {
             font-size: 14px;
           }
-
         }
       }
     }
@@ -227,17 +189,15 @@ footer {
         margin-bottom: 20px;
       }
 
-      img{
+      img {
         width: 100%;
         height: auto;
-       
       }
 
-      p{
-
+      p {
         width: 100%;
         display: block;
-        text-align:center;
+        text-align: center;
 
         font-size: 18px;
       }
@@ -289,30 +249,25 @@ footer {
       }
     }
 
-    small{
-
+    small {
       color: $coc;
     }
   }
 
   @include mq(sm) {
-
-    .logoblocks{
-
+    .logoblocks {
       width: 100%;
       justify-content: center;
 
-      p{
-        text-align:center;
+      p {
+        text-align: center;
       }
 
-      .footlogo{
-
+      .footlogo {
         width: 50%;
       }
     }
     .inner {
-
       margin-bottom: 10px;
       dl {
         dt {
@@ -330,10 +285,8 @@ footer {
           width: 100%;
           margin-bottom: 15px;
 
-          span{
-
-            img{
-
+          span {
+            img {
               width: 30vw;
               height: auto;
             }
@@ -374,17 +327,12 @@ footer {
     }
   }
 
-  @media print{
-   
-    .inner{
-
-      ul{
-
+  @media print {
+    .inner {
+      ul {
         display: none;
-        li{
-
-          a{
-
+        li {
+          a {
             padding: 5px;
           }
         }

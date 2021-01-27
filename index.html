@@ -34,7 +34,6 @@
 
 <body>
 
-
     <div class="bMenu">
 
         <a class="menu-trigger">
@@ -54,8 +53,9 @@
 
                 <ul>
 
-                    <li class="soon"><a href="#" class="soon">ABOUT</a></li>
-                    <li class="soon"><a href="#" class="soon">WORKS</a></li>
+                    <li><a href="#ABOUT">ABOUT</a></li>
+                    <li><a href="#WORKS">WORKS</a></li>
+                    <li><a href="company.html">COMPANY</a></li>
                     <li><a href="mailto:t-sudo@ghee.jp">CONTACT</a></li>
 
                 </ul>
@@ -96,18 +96,93 @@
             <div class="swiper-pagination"></div>
         </div>
 
-        <div class="contents">
+        <div class="contents" id="ABOUT">
 
-            <h2 class="sechead">ABOUT</h2>
+            <div class="splitwrap">
+                <h2 class="sechead" data-scroll>ABOUT</h2>
+                <div class="lines" data-scroll></div>
+            </div>
+           
+            <div class="inner">
+                <div class="imgbox" data-scroll><img src="assets/images/imgs-assets/TK2_6976.jpg" alt="prof"></div>
+                <div class="txtbox" data-scroll="">
+                    <dl>
+                        <dt>CEO</dt>
+                        <dd>須藤　貴史</dd>
+                        <dt>CAREER</dt>
+                        <dd>経歴を掲載します。
+                            この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れてい</dd>
+                        <dt>BUSINESS</dt>
+                        <dd>経歴を掲載します。
+                            この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れてい</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+        <div class="contents" id="WORKS">
+
+
+            <div class="splitwrap">
+                <h3 class="sechead" data-scroll>WORKS</h3>
+                <div class="lines" data-scroll></div>
+            </div>
+           
+            <div class="itemwrapper">
+       
+                <div class="items active" data-scroll>
+                    <span class="names">ClientName</span>
+                    <span class="cats">Category</span>
+                    <span class="urls"><a href="#">URL:http://dummy.html</a></span>
+                </div>
+                <div class="items" data-scroll>
+                    <span class="names">ClientName</span>
+                    <span class="cats">Category</span>
+                    <span class="urls"><a href="#">URL:http://dummy.html</a></span>
+                </div>
+                <div class="items active" data-scroll>
+                    <span class="names">ClientName</span>
+                    <span class="cats">Category</span>
+                    <span class="urls"><a href="#">URL:http://dummy.html</a></span>
+                </div>
+                <div class="items" data-scroll>
+                    <span class="names">ClientName</span>
+                    <span class="cats">Category</span>
+                    <span class="urls"><a href="#">URL:http://dummy.html</a></span>
+                </div>
+
+            </div>
         </div>
 
     </div>
 
-    <div class="loader">
+    <footer>
 
-        <img src="assets/images/SVG/logo.svg" alt="logo" class="load_logo"><br>
+        <div class="inner">
 
-    </div>
+            <span class="logo"><img src="assets/images/SVG/logo.svg" alt="Ghee"></span>
+            <span class="add">27-12-409 Sakanoshita<br>
+                Kamakura<br>
+                Kanagawa 248-0021,Japan</span>
+
+            <ul class="sns">
+
+                <li><a href=""><img src="assets/images/SVG/tel_f.svg" alt="telphone"></a></li>
+                <li><a href=""><img src="assets/images/SVG/mai_f.svg" alt="mail"></a></li>
+                <li><a href=""><img src="assets/images/SVG/fb_f.svg" alt=facebook"></a></li>
+                <li><a href=""><img src="assets/images/SVG/insta_f.svg" alt="instagram"></a></li>
+            </ul>
+
+        </div>
+
+        <div class="google-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1627.973439268727!2d139.5322703!3d35.3073014!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601845fa02734765%3A0x6776550365a70e2!2sBeach%20Side%20Living!5e0!3m2!1sen!2sjp!4v1611741802292!5m2!1sen!2sjp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+
+        <small>©2020 Ghee INC.</small>
+    </footer>
+
+    <div class="loader"><img src="assets/images/SVG/logo.svg" alt="logo" class="load_logo"><br></div>
 
 
     <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
@@ -118,7 +193,7 @@
 
     <script>
 
-swiperstarter();
+        swiperstarter();
 
         function swiperstarter() {
             var swiper = new Swiper('.swiper-container', {
@@ -161,6 +236,7 @@ swiperstarter();
 
                 $(".loader").addClass("active");
                 $(".swiper-container").addClass("active");
+                $("header").addClass("active");
                 swiperstarter();
 
             }, 1800);

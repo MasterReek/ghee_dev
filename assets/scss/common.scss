@@ -15,6 +15,12 @@ $breakpoints: (
   }
 }
 
+
+html{
+
+  scroll-behavior: smooth;
+}
+
 html * {
   box-sizing: border-box;
   line-height: normal;
@@ -112,6 +118,7 @@ body {
 }
 
 $coc: #696969;
+$acc:#f580a0;
 
 $sub:#7a7a7a;
 
@@ -119,8 +126,10 @@ $bgc:#F0F8F8;
 
 $sub2:#069948;
 
-$acc: #0777A3;
+
 $txt: rgb(71, 71, 71);
+$txtl: rgb(179, 179, 179);
+
 
 $header_h: 80px;
 $hh:80px;
@@ -466,9 +475,10 @@ body {
 @import "footer";
 @import "loader";
 @import "swiper";
+@import "items";
 // @import "otherpage";
 // @import "maintenance";
-// @import "company";
+@import "company";
 // @import "companypage";
 // @import "flow";
 // @import "qanda";
