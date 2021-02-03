@@ -206,6 +206,11 @@ function scroller(){
 
     $('a[href^="#"]').click(function() {
 
+
+        $('.menu-trigger').removeClass('active');
+        $(".rbox").removeClass('active');
+        $(".menuwrap").removeClass('active');
+
         // スクロールの速度
         var speed = 1000; // ミリ秒
         // アンカーの値取得

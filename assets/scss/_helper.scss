@@ -159,12 +159,14 @@ $bh:120px;
       position:absolute;
       bottom: 0;
       left: 50%;
+      opacity: 0;
 
-      &[data-scroll="out"] {
+      &[data-scroll] {
      
-        --scroll-length: 4;
-        --scale: calc(0 + (0.2 * var(--scroll-length) * var(--viewport-y)));
+        --scroll-length: 2;
+        --scale: calc(1 + (0.2 * var(--scroll-length) * var(--viewport-y)));
         transform: scale(var(--scale));
+        opacity: calc(1 + var(--viewport-y));
       }
       
     }
@@ -174,13 +176,15 @@ $bh:120px;
   @include mq() {
  
   }
+
   @include mq(sm) {
     padding: 60px 30px;
     min-height: 0;
+    margin-top: 20px;
 
     .sechead {
       font-size: 28px;
-      margin-bottom: 25px;
+      margin-bottom: 10vh;
     }
 
     .reader {
@@ -198,6 +202,24 @@ $bh:120px;
         line-height: 1.4;
 
         font-weight: 300;
+      }
+    }
+
+    .splitwrap{
+
+      margin-bottom: 15px;
+
+      .lines{
+
+        height: 60px;
+        bottom: 0%;
+
+        &[data-scroll] {
+          --scroll-length: 2;
+          --scale: calc(1 + (0.2 * var(--scroll-length) * var(--viewport-y)));
+          transform: scale(var(--scale));
+          opacity: calc(0.6 + var(--viewport-y));
+        }
       }
     }
   }
@@ -220,7 +242,6 @@ $bh:120px;
   
 }
 
-
 .inner{
 
   width: 100%;
@@ -232,6 +253,101 @@ $bh:120px;
   align-content: center;
 }
 
+.mainread{
+
+  font-size: 24px;
+  color: $txt;
+  line-height: 210%;
+  text-align:center;
+  margin-top: 30px;
+  display: block;
+  width: 100%;
+
+
+  strong{
+
+    font-size: 34px;
+    display: block;
+    margin-bottom: 25px;
+    position: relative;
+
+    &:before{
+      content: '';
+      display: inline-block;
+      width: 50px;
+      height: 100%;
+      border-bottom: 1px solid $txtl;
+      transform: translateY(-10px);
+      margin-right: 10px;
+     
+    }
+    &:after{
+      content: '';
+      display: inline-block;
+      width: 50px;
+      height: 100%;
+      border-bottom: 1px solid $txtl;
+      transform: translateY(-10px);
+      margin-left: 10px;
+     
+    }
+  }
+
+  .en{
+
+    @include engfonts();
+    display: inline;
+
+  }
+
+  .cx{
+    display: block;
+    width: 100%;
+    margin: 15px 0;
+    line-height: 210%;
+
+    &.cname{
+
+      font-size: 22px;
+      @include min();
+    }
+  }
+
+  &[data-scroll] {
+     
+    --scroll-length: 2;
+    --scale: calc(.8 + (0.2 * var(--scroll-length) * var(--viewport-y)));
+    transform: scale(var(--scale));
+    opacity: calc(1 + var(--viewport-y));
+  }
+
+  @include mq(){
+
+    width: 100%;
+    font-size: 16px;
+    text-align: left;
+   
+
+      strong{
+        font-size: 22px;
+        &:before,&:after{
+
+          display: none;
+        }
+      }
+    
+
+    &[data-scroll] {
+     
+     
+      transform: none;
+      opacity: calc(1 + var(--viewport-y));
+    }
+  
+
+  }
+}
+
 .imgbox{
 
   width: 55%;
@@ -240,13 +356,16 @@ $bh:120px;
 
   img{
     width: 100%;
+    will-change: scale,opacity;
   }
 
-  &[data-scroll] {
-    opacity: calc(1 + var(--viewport-y));
-    --scroll-length: 0.6;
-    --scale: calc(1 + (0.2 * var(--scroll-length) * var(--viewport-y)));
+  [data-scroll] {
+
+    --scroll-length: 1.5;
+    --scale: calc(0.8 + (0.2 * var(--scroll-length) * var(--visible-y)));
+    opacity: calc(1.2 + var(--viewport-y));
     transform: scale(var(--scale));
+
   }
 }
 
@@ -270,9 +389,18 @@ $bh:120px;
       border-bottom: 1px solid $coc;
       display: inline-block;
       margin-bottom: 10px;
+      font-size: 18px;
     }
     dd{
       margin-bottom: 30px;
+      font-size: 14px;
+      line-height: 180%;
+
+      span{
+
+        display: block;
+        margin: 15px 0;
+      }
     }
   }
 
@@ -281,7 +409,22 @@ $bh:120px;
   }
 }
 
+@include mq(sm){
 
+  .imgbox,.txtbox{
+
+    width: 100%;
+    padding: 0;
+  }
+
+  .imgbox{
+
+    transform-origin: center center;
+    margin-bottom: 20px;
+  }
+
+
+}
 
 
 @mixin inv() {

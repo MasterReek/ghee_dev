@@ -42,6 +42,8 @@ a[href^="tel:"] {
 
 html,
 body {
+
+  position: relative;
   @media print {
     max-width: 210mm;
     top: 0 !important;
@@ -64,6 +66,7 @@ body {
 }
 
 @import url(https://fonts.googleapis.com/earlyaccess/notosansjp.css);
+@import url(https://fonts.googleapis.com/css2?family=Varela+Round&display=swap);
 // @import url(https://fonts.googleapis.com/css?family=M + PLUS + Rounded + 1c);
 
 @mixin noto() {
@@ -73,6 +76,11 @@ body {
 
 @mixin roboto() {
   font-family: "Roboto", sans-serif;
+}
+
+@mixin engfonts() {
+
+  font-family: 'Varela Round', sans-serif;
 }
 
 @mixin maru() {
@@ -132,7 +140,7 @@ $txtl: rgb(179, 179, 179);
 
 
 $header_h: 80px;
-$hh:80px;
+$hh:60px;
 $sphh:60px;
 
 $tabhh:60px;
@@ -483,7 +491,7 @@ body {
 // @import "flow";
 // @import "qanda";
 // @import "paging";
-// @import "sp_menu";
+@import "sp_menu";
 // @import "contact";
 // @import "newsdetail";
 // @import "disp";

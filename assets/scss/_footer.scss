@@ -3,9 +3,7 @@ footer {
   height: auto;
   padding: 60px 0px 0px;
   position: relative;
-  background-image: url(../images/1x/footer_bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+ 
   z-index: 999;
   @include noto();
 
@@ -126,10 +124,11 @@ footer {
     text-align: center;
     position: relative;
     z-index: 5;
+    line-height: 0;
   }
 
   @include mq() {
-    padding: 30px 0 0px;
+    padding: 60px 0 ;
     // background-size: auto 60px;
 
     &:before {
@@ -139,7 +138,7 @@ footer {
     .inner {
       justify-content: center;
       flex-wrap: wrap;
-      margin-bottom: 0;
+      // margin-bottom: 0;
 
       a {
         text-decoration: none;
@@ -298,6 +297,13 @@ footer {
           }
         }
       }
+      .sns{
+
+        li{
+  
+          width: 15%;
+        }
+      }
     }
 
     .b_inner {
@@ -325,6 +331,8 @@ footer {
     .message {
       display: none;
     }
+
+   
   }
 
   @media print {

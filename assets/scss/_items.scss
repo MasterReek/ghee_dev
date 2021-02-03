@@ -1,85 +1,72 @@
-
-.itemwrapper{
-
+.itemwrapper {
   max-width: 1200px;
   width: 100%;
 
-  display:flex;
+  display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
   align-content: space-between;
   position: relative;
   z-index: 5;
- 
-
 }
 
-.items{
-
-  width: 40%;
+.items {
+  width: 36%;
   height: auto;
   margin-bottom: 150px;
 
-  display:flex;
+  display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
   align-content: center;
 
   color: $txtl;
+  will-change: scale,opacity;
 
-  &:nth-of-type(1n){
-    --scroll-length:1.2;
-    --scale: calc(1 + (2 * var(--scroll-length) * var(--viewport-y)));
-    transform: scale(var(--scale));
-  }
-  &:nth-of-type(2n){
-    --scroll-length:1.2;
-    --scale: calc(1 + (2 * var(--scroll-length) * var(--viewport-y)));
-    transform: scale(var(--scale));
-  }
+  --scroll-length: .7;
+  --scale: calc(1 + (1.2 * var(--scroll-length) * var(--viewport-y)));
+  transform: scale(var(--scale));
 
-  &.active{
-
+  &.active {
     color: $acc;
   }
 
-
-  span{
+  span {
     width: 100%;
-    display:flex;
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
     align-content: center;
   }
 
-  .names{
-
+  .names {
     font-size: 24px;
     font-weight: bold;
   }
 
-  .cats{
+  .cats {
     font-size: 18px;
     font-weight: normal;
     margin-bottom: 15px;
   }
 
-  .urls{
-
+  .urls {
     font-size: 14px;
 
-    a{
+    a {
       text-decoration: none;
       color: inherit;
     }
-
   }
 
   &[data-scroll] {
     opacity: calc(1 + var(--viewport-y));
+  }
 
+  @include mq(sm){
+    width: 100%;
   }
 }
